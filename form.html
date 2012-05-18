@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>form.js</title>
+  <script type="text/javascript" src="form.js"></script>
+  <script type="text/javascript">
+    obj = {
+      name: 'form.js',
+      description: 'Javascript library that creates HTML form inputs easily',
+      version: 0.1,
+      published: false,
+      categories: [{
+        id: 1,
+        name: 'Javascript'
+      },{
+        id: 2,
+        name: 'Forms'
+      }],
+      status: 'beta'
+    };
+
+    form = new Form(obj, {
+      name: 'object'
+    });
+    document.write(form.input('name'));
+    document.write(form.input('description', {
+      as: 'textarea'
+    }));
+    document.write(form.input('version'));
+    document.write(form.input('published'));
+    document.write(form.input('categories', {
+      collection: [{
+        id: 1,
+        name: 'Javascript'
+      },{
+        id: 2,
+        name: 'Forms'
+      },{
+        id: 3,
+        name: 'HTML5'
+      }]
+    }));
+    document.write(form.input('categories', {
+      as: 'select',
+      collection: [{
+        id: 1,
+        name: 'Javascript'
+      },{
+        id: 2,
+        name: 'Forms'
+      },{
+        id: 3,
+        name: 'HTML5'
+      }]
+    }));
+    document.write(form.input('status', {
+      collection: ['alpha', 'beta', 'release candidate'],
+      as: 'radio'
+    }));
+    document.write(form.input('status', {
+      collection: ['alpha', 'beta', 'release candidate']
+    }));
+  </script>
+</head>
+<body>
+</body>
+</html>
